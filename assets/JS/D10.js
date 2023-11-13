@@ -607,7 +607,7 @@ svuotaLista();
   }
 } */
 
-svuotaLista();
+/* svuotaLista(); */
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
