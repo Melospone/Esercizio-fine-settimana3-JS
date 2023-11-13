@@ -224,22 +224,24 @@ console.log("Values:", diceRisultato.values);
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+/* FATTO TOTALMENTE CON DOCUMENTAZIONE */
+
 function howManyDays(data) {
   const oggi = new Date();
 
-  const tempo = data.getTime()
+  const tempo = data.getTime();
 
-  const tempoOggi = oggi.getTime()
-  const differenzaTempo = tempoOggi - tempo
+  const tempoOggi = oggi.getTime();
+  const differenzaTempo = tempoOggi - tempo;
 
   const giorniDifferenza = Math.floor(differenzaTempo / (1000 * 60 * 60 * 24));
-  return giorniDifferenza
+  return giorniDifferenza;
 }
 
 const data = new Date("2023-11-11");
-const giorniPassati = howManyDays(data)
+const giorniPassati = howManyDays(data);
 
-console.log(howManyDays(data))
+console.log(howManyDays(data));
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
@@ -253,21 +255,20 @@ console.log(howManyDays(data))
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+
 function deleteProp(oggetto, strElimina) {
   delete oggetto[strElimina];
 
-  return oggetto
+  return oggetto;
 }
 
 let mioOggetto = {
   nome: "Carmelo",
   eta: 24,
-  citta: "Catania"
+  citta: "Catania",
 };
 
-console.log(deleteProp(mioOggetto, "nome"))
-
-
+console.log(deleteProp(mioOggetto, "nome"));
 
 /* ARRAY FILM  */
 const movies = [
@@ -415,10 +416,10 @@ console.log(piuRecente);
 */
 
 const countMovies = (array) => {
-  return array.length
+  return array.length;
 };
 
-const numeroFilmTot = countMovies(movies)
+const numeroFilmTot = countMovies(movies);
 console.log(numeroFilmTot);
 
 /* ESERCIZIO 14
@@ -426,15 +427,15 @@ console.log(numeroFilmTot);
 */
 
 function onlyTheYears(array) {
-  let anniUscitaFilm = []
+  let anniUscitaFilm = [];
 
   for (let i = 0; i < array.length; i++) {
-    anniUscitaFilm.push(array[i].Year)
+    anniUscitaFilm.push(array[i].Year);
   }
-  return anniUscitaFilm
+  return anniUscitaFilm;
 }
 
-const anniUscitaFilm = onlyTheYears(movies)
+const anniUscitaFilm = onlyTheYears(movies);
 console.log(anniUscitaFilm);
 
 /* ESERCIZIO 15
@@ -443,18 +444,18 @@ console.log(anniUscitaFilm);
 
 function onlyInLastMillennium(array) {
   let millennioScorso = 2000;
-  let filmMillennioScorso = []
+  let filmMillennioScorso = [];
 
   for (let i = 0; i < array.length; i++) {
     let anno = array[i].Year;
     if (anno >= millennioScorso) {
-      filmMillennioScorso.push(array[i])
+      filmMillennioScorso.push(array[i]);
     }
   }
-  return filmMillennioScorso
+  return filmMillennioScorso;
 }
 
-const filmDiQuestoMillennio = onlyInLastMillennium(movies)
+const filmDiQuestoMillennio = onlyInLastMillennium(movies);
 console.log(filmDiQuestoMillennio);
 
 /* ESERCIZIO 16
@@ -465,12 +466,12 @@ function sumAllTheYears(array) {
   let sommaAnniFilm = 0;
 
   for (let i = 0; i < array.length; i++) {
-    sommaAnniFilm += parseInt(array[i].Year, 10)
+    sommaAnniFilm += parseInt(array[i].Year, 10);
   }
-  return sommaAnniFilm
+  return sommaAnniFilm;
 }
 
-const risultatoSommaAnni = sumAllTheYears(movies)
+const risultatoSommaAnni = sumAllTheYears(movies);
 console.log(risultatoSommaAnni);
 
 /* ESERCIZIO 17
@@ -480,11 +481,11 @@ console.log(risultatoSommaAnni);
 function searchByTitle(array, stringaTitolo) {
   const risultatoFilm = array.filter((film) =>
     film.Title.includes(stringaTitolo)
-  )
-  return risultatoFilm
+  );
+  return risultatoFilm;
 }
 
-const risultatoFilm = searchByTitle(movies, "Lord")
+const risultatoFilm = searchByTitle(movies, "Lord");
 console.log(risultatoFilm);
 
 /* ESERCIZIO 18
@@ -496,18 +497,17 @@ function searchAndDivide(array, stringaTitolo) {
   const match = [];
   const unmatch = [];
   for (let i = 0; i < array.length; i++) {
-    const film = array[i]
+    const film = array[i];
     if (film.Title.includes(stringaTitolo)) {
-      match.push(film)
+      match.push(film);
     } else {
-      unmatch.push(film)
+      unmatch.push(film);
     }
-
   }
-  return { match, unmatch }
+  return { match, unmatch };
 }
 
-const risultatoMatchUnmatch = searchAndDivide(movies, "Lord")
+const risultatoMatchUnmatch = searchAndDivide(movies, "Lord");
 console.log(risultatoMatchUnmatch);
 
 /* ESERCIZIO 19
@@ -522,23 +522,22 @@ console.log(risultatoMatchUnmatch);
 
 function selezioneContainer() {
   const container = document.getElementById("container");
-  return container
+  return container;
 }
 
-const elementiContainer = selezioneContainer()
+const elementiContainer = selezioneContainer();
 console.log(elementiContainer);
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 function selezioneTd() {
-  const td = document.querySelectorAll("td")
-  return td
+  const td = document.querySelectorAll("td");
+  return td;
 }
 
-const elementiTd = selezioneTd()
+const elementiTd = selezioneTd();
 console.log(elementiTd);
-
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -554,62 +553,61 @@ function cicloTd() {
 
 cicloTd();
 
-
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+
 function addBackGround() {
-  const linkColor = document.querySelectorAll("a")
-   for (let i= 0; i < linkColor.length; i++) {
+  const linkColor = document.querySelectorAll("a");
+  for (let i = 0; i < linkColor.length; i++) {
     linkColor[i].style.backgroundColor = "red";
     linkColor[i].style.color = "white";
-   }
+  }
 }
 
-addBackGround()
-
-
+addBackGround();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
 function aggiungiElemento() {
-  const nuovoEle = document.createElement("li")
+  const nuovoEle = document.createElement("li");
 
-  nuovoEle.textContent = "QUARTO ELMENTO CREATO DINAMICAMENTE"
+  nuovoEle.textContent = "QUARTO ELEMENTO CREATO DINAMICAMENTE";
 
   const listaEsistente = document.getElementById("myList");
 
-  listaEsistente.appendChild(nuovoEle).style.color = "blue"
+  listaEsistente.appendChild(nuovoEle).style.color = "blue";
 }
-aggiungiElemento()
+aggiungiElemento();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
 /* FATTO CON REMOVE */
-/* function svuotaLista() {
-  const lista = document.getElementById("myList")
+function svuotaLista() {
+  const lista = document.getElementById("myList");
 
-  lista.remove(lista)
+  lista.remove(lista);
   console.log(lista);
 }
 
-svuotaLista() */
+svuotaLista();
 
+/* SVUOTANDO E NON RIMUOVENDO MA MI DA ERRORE... */
 
-function svuotaLista() {
+/* function svuotaLista() {
   const lista = document.getElementById("myList");
 
   if (lista) {
     lista.children.forEach((e) =>
     lista.removeChild(e))
   }
-}
+} */
 
-svuotaLista()
+svuotaLista();
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
@@ -655,4 +653,3 @@ aggiungiClasse();
 */
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
-
